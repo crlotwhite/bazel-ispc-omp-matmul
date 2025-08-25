@@ -25,13 +25,26 @@ This structure is used to practice working with a complex, multi-library project
 ### CPU
 
 ```
-bazel-bin/main/main
 MatMul Example
 CPU Mode
-Matrix multiplication: 310541 ms
+Matrix multiplication: 306876 ms
 mat[0,0] = 34854.5
 mat[4095,4095] = 34854.5
+
 ```
 
 About 5 minutes.
 
+### OMP
+
+```
+OpenMP Mode
+_OPENMP macro: 200203
+omp_get_max_threads(): 32
+threads in parallel region (omp_get_num_threads): 32
+Matrix multiplication (OpenMP): 11265.5 ms
+mat[0,0] = 34854.5
+mat[4095,4095] = 34854.5
+```
+
+About 11 Seconds.

@@ -1,4 +1,11 @@
-.PHONY: all clean
+.PHONY: all clean run
+
+# Add .exe extension on Windows
+ifeq ($(OS),Windows_NT)
+EXEEXT := .exe
+else
+EXEEXT :=
+endif
 
 all: clean build run
 
@@ -9,4 +16,4 @@ clean:
 	bazel clean
 
 run:
-	bazel-bin/main/main
+	bazel-bin/main/main$(EXEEXT)
