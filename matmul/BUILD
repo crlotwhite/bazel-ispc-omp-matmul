@@ -5,4 +5,5 @@ cc_library(
     srcs = ["matmul.cc"],
     hdrs = ["matmul.h"],
     visibility = ["//main:__pkg__"],
+    deps = ["//matutils:matutils"],
 )

@@ -4,5 +4,8 @@ cc_library(
     name = "matutils",
     srcs = ["utils.cc"],
     hdrs = ["utils.h"],
-    visibility = ["//main:__pkg__"],
+    visibility = [
+        "//main:__pkg__",
+        "//matmul:__pkg__"
+    ],
 )
