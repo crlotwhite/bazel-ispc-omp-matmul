@@ -2,7 +2,7 @@
 #include <iostream>
 #include "matmul/matmul.h"
 #include "matutils/utils.h"
-
+#include "timeutils/utils.h"
 
 int main() {
     std::cout << "MatMul Example" << std::endl;
@@ -31,13 +31,15 @@ int main() {
     fill_matrix(matB, rows, cols, 2.71);
 
     // C = A * B
-    double* matC = matmul(matA, matB, rows, cols);
+    double* matC = nullptr;
+    TIME_EXECUTE("Matrix multiplication", matC = matmul(matA, matB, rows, cols));
     if (!matC) {
         std::cerr << "Matrix multiplication failed\n";
         free_matrix(matA);
         free_matrix(matB);
         return 1;
     }
+
 
     // print a few sample values
     std::cout << "mat[0,0] = " << mat_at(matC, cols, 0, 0) << "\n";
