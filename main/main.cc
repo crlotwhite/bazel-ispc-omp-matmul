@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <iostream>
-#include "matmul/matmul.h"
+#include "cpu/matmul.h"
 #include "matutils/utils.h"
 #include "timeutils/utils.h"
 

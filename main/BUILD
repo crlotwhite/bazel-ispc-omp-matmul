@@ -4,7 +4,7 @@ cc_binary(
     name = "main",
     srcs = ["main.cc"],
     deps = [
-        "//matmul:matmul",
+        "//cpu:matmul",
         "//matutils:matutils",
         "//timeutils:timeutils",
     ],

@@ -6,6 +6,6 @@ cc_library(
     hdrs = ["utils.h"],
     visibility = [
         "//main:__pkg__",
-        "//matmul:__pkg__"
+        "//cpu:__pkg__"
     ],
 )
