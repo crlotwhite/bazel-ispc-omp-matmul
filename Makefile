@@ -7,10 +7,20 @@ else
 EXEEXT :=
 endif
 
+ifeq ($(OS),Windows_NT)
+RC := --bazelrc=win.rc
+else
+ifeq ($(OS),Darwin)
+RC := --bazelrc=mac.rc
+else
+RC :=
+endif
+endif
+
 all: clean build run
 
 build:
-	bazel build //main:main
+	bazel $(RC) build //main:main
 
 clean:
 	bazel clean

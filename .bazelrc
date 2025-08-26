@@ -1,3 +1,8 @@
 # ISPC Configuration
-build --action_env=ISPC_HOME="C:/Users/tama/ispc-v1.28.1-windows"
-build --action_env=PATH="C:/Users/tama/ispc-v1.28.1-windows/bin;%PATH%"
+build --action_env=CC=/usr/bin/clang
+build --action_env=CXX=/usr/bin/clang++
+build --host_action_env=CC=/usr/bin/clang
+build --host_action_env=CXX=/usr/bin/clang++
+
+# build --action_env=ISPC_HOME="C:/Users/tama/ispc-v1.28.1-windows"
+# build --action_env=PATH="C:/Users/tama/ispc-v1.28.1-windows/bin;%PATH%"
