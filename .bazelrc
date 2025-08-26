@@ -1,0 +1,3 @@
+# ISPC Configuration
+build --action_env=ISPC_HOME="C:/Users/tama/ispc-v1.28.1-windows"
+build --action_env=PATH="C:/Users/tama/ispc-v1.28.1-windows/bin;%PATH%"

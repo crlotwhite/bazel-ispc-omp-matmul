@@ -12,6 +12,7 @@ cc_binary(
     deps = [
         "//cpu:matmul",
         "//omp:matmul",
+        "//ispc:matmul",
         "//matutils:matutils",
         "//timeutils:timeutils",
     ],

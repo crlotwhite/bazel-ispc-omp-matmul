@@ -8,5 +8,6 @@ cc_library(
         "//main:__pkg__",
         "//cpu:__pkg__",
         "//omp:__pkg__",
+        "//ispc:__pkg__",
     ],
 )

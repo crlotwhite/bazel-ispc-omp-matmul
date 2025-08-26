@@ -2,6 +2,7 @@
 #include <iostream>
 #include "cpu/matmul.h"
 #include "omp/matmul.h"
+#include "ispc/matmul.h"
 #include "matutils/utils.h"
 #include "timeutils/utils.h"
 #ifdef _OPENMP
@@ -90,10 +91,26 @@ int main() {
     std::cout << "mat[0,0] = " << mat_at(matD, cols, 0, 0) << "\n";
     std::cout << "mat[" << rows-1 << "," << cols-1 << "] = " << mat_at(matD, cols, rows-1, cols-1) << "\n";
 
+    std::cout << "ISPC Mode" << std::endl;
+    double* matE = nullptr;
+    TIME_EXECUTE("Matrix multiplication (ISPC)", matE = ispc::matmul(matA, matB, rows, cols));
+    if (!matE) {
+        std::cerr << "Matrix multiplication failed\n";
+        free_matrix(matA);
+        free_matrix(matB);
+        free_matrix(matC);
+        free_matrix(matD);
+        return 1;
+    }
+
+    // print a few sample values
+    std::cout << "mat[0,0] = " << mat_at(matE, cols, 0, 0) << "\n";
+    std::cout << "mat[" << rows-1 << "," << cols-1 << "] = " << mat_at(matE, cols, rows-1, cols-1) << "\n";
+
     free_matrix(matA);
     free_matrix(matB);
     free_matrix(matC);
     free_matrix(matD);
-
+    free_matrix(matE);
     return 0;
 }

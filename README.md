@@ -47,4 +47,15 @@ mat[0,0] = 34854.5
 mat[4095,4095] = 34854.5
 ```
 
-About 11 Seconds.
+About 11 seconds.
+
+### ISPC
+
+```
+ISPC Mode
+Matrix multiplication (ISPC): 211705 ms
+mat[0,0] = 34854.5
+mat[4095,4095] = 34854.5
+```
+
+About 3 minutes.
